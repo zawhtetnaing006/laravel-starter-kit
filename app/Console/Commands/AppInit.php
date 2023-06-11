@@ -29,6 +29,7 @@ class AppInit extends Command
         Artisan::call('key:generate');
         Artisan::call('migrate');
         Artisan::call('db:seed');
+        echo "success";
         //
     }
 }
