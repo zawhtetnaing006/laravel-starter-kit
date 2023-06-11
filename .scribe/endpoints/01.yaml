@@ -26,27 +26,27 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: yrohan@example.org
+        example: bauch.tyree@example.net
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: 'Ws^Kah&,g"h&{pwR_3?'
+        example: 'C<J6+d":yx@W[Kcr'
         type: string
         custom: []
       device_name:
         name: device_name
         description: "To identified user login devices. Won't be needed for web."
         required: false
-        example: doloremque
+        example: dolorem
         type: string
         custom: []
     cleanBodyParameters:
-      email: yrohan@example.org
-      password: 'Ws^Kah&,g"h&{pwR_3?'
-      device_name: doloremque
+      email: bauch.tyree@example.net
+      password: 'C<J6+d":yx@W[Kcr'
+      device_name: dolorem
     fileParameters: []
     responses:
       -
@@ -89,99 +89,99 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ex
+        example: odit
         type: string
         custom: []
       profile_photo:
         name: profile_photo
         description: ''
         required: false
-        example: doloremque
+        example: ut
         type: 'max:2048kb'
         custom: []
       email:
         name: email
         description: 'Must Be Unique'
         required: true
-        example: halvorson.emilia@example.net
+        example: janet07@example.net
         type: string
         custom: []
       phone:
         name: phone
         description: ''
         required: true
-        example: animi
+        example: ipsum
         type: string
         custom: []
       age:
         name: age
         description: 'min:16'
         required: false
-        example: 6
+        example: 18
         type: integer
         custom: []
       degree:
         name: degree
         description: ''
         required: false
-        example: error
+        example: aut
         type: string
         custom: []
       'job_title ':
         name: 'job_title '
         description: ''
         required: false
-        example: molestias
+        example: consequatur
         type: string
         custom: []
       device_name:
         name: device_name
         description: ''
         required: false
-        example: libero
+        example: quod
         type: string
         custom: []
       bio:
         name: bio
         description: ''
         required: false
-        example: ea
+        example: consequatur
         type: string
         custom: []
       password:
         name: password
         description: 'min:8|confirmed'
         required: true
-        example: 'n>r~J2+ZJI)*bvQLtwsN'
+        example: '*~0//f;B2@d-0C8'
         type: string
         custom: []
       password_confirmation:
         name: password_confirmation
         description: min8
         required: false
-        example: quo
+        example: ducimus
         type: required
         custom: []
       job_title:
         name: job_title
         description: ''
         required: false
-        example: et
+        example: id
         type: string
         custom: []
     cleanBodyParameters:
-      name: ex
-      profile_photo: doloremque
-      email: halvorson.emilia@example.net
-      phone: animi
-      age: 6
-      degree: error
-      'job_title ': molestias
-      device_name: libero
-      bio: ea
-      password: 'n>r~J2+ZJI)*bvQLtwsN'
-      password_confirmation: quo
-      job_title: et
+      name: odit
+      profile_photo: ut
+      email: janet07@example.net
+      phone: ipsum
+      age: 18
+      degree: aut
+      'job_title ': consequatur
+      device_name: quod
+      bio: consequatur
+      password: '*~0//f;B2@d-0C8'
+      password_confirmation: ducimus
+      job_title: id
     fileParameters: []
     responses:
       -
@@ -203,8 +203,6 @@ endpoints:
           "token": "1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m",
           "profile_photo_path": "path/to/profile_image"
           }
-
-          will always retrun response in this format. If there's no value, there'll be null
         headers: []
         description: ''
         custom: []

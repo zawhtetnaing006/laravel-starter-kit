@@ -30,6 +30,7 @@ class AuthController {
 	 * @response {
 	 * 	"token": "generate token"
 	 * }
+	 * @unauthenticated
 	 */
 	public function login(LoginRequest $request){
 
@@ -88,6 +89,7 @@ class AuthController {
      * "token": "1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m",
      * "profile_photo_path": "path/to/profile_image"
 	 * }
+	 * @unauthenticated
 	 * 
 	 * will always retrun response in this format. If there's no value, there'll be null
 	 */

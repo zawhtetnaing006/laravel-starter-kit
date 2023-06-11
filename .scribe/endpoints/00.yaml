@@ -12,9 +12,10 @@ endpoints:
       subgroupDescription: ''
       title: 'Topic listing'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -35,7 +36,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hEf5b86D1g3caak6VePZv4d'
     controller: null
     method: null
     route: null

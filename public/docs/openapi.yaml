@@ -38,15 +38,15 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: yrohan@example.org
+                  example: bauch.tyree@example.net
                 password:
                   type: string
                   description: ''
-                  example: 'Ws^Kah&,g"h&{pwR_3?'
+                  example: 'C<J6+d":yx@W[Kcr'
                 device_name:
                   type: string
                   description: "To identified user login devices. Won't be needed for web."
-                  example: doloremque
+                  example: dolorem
               required:
                 - email
                 - password
@@ -61,10 +61,63 @@ paths:
         200:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "{\n\n\"id\": 1,\n\"name\": \"ab\",\n\"email\": \"admin@gmail.com\",\n\"phone\": \"temporibus\",\n\"age\": 18,\n\"device_name\": \"Iphone\",\n\"degree\": \"commodi\",\n\"job_title\": \"Team Lead at google\",\n\"bio\": \"Awesome developer\",\n\"updated_at\": \"2023-05-29:16:06:33\",\n\"created_at\": \"2023-05-29:16:06:33\",\n\"token\": \"1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m\",\n\"profile_photo_path\": \"path/to/profile_image\"\n}\n\nwill always retrun response in this format. If there's no value, there'll be null"
+                type: object
+                example:
+                  id: 1
+                  name: ab
+                  email: admin@gmail.com
+                  phone: temporibus
+                  age: 18
+                  device_name: Iphone
+                  degree: commodi
+                  job_title: 'Team Lead at google'
+                  bio: 'Awesome developer'
+                  updated_at: '2023-05-29:16:06:33'
+                  created_at: '2023-05-29:16:06:33'
+                  token: 1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m
+                  profile_photo_path: path/to/profile_image
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: ab
+                  email:
+                    type: string
+                    example: admin@gmail.com
+                  phone:
+                    type: string
+                    example: temporibus
+                  age:
+                    type: integer
+                    example: 18
+                  device_name:
+                    type: string
+                    example: Iphone
+                  degree:
+                    type: string
+                    example: commodi
+                  job_title:
+                    type: string
+                    example: 'Team Lead at google'
+                  bio:
+                    type: string
+                    example: 'Awesome developer'
+                  updated_at:
+                    type: string
+                    example: '2023-05-29:16:06:33'
+                  created_at:
+                    type: string
+                    example: '2023-05-29:16:06:33'
+                  token:
+                    type: string
+                    example: 1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m
+                  profile_photo_path:
+                    type: string
+                    example: path/to/profile_image
       tags:
         - Auth
       requestBody:
@@ -77,51 +130,51 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: ex
+                  example: odit
                 profile_photo:
                   type: 'max:2048kb'
                   description: ''
-                  example: doloremque
+                  example: ut
                 email:
                   type: string
                   description: 'Must Be Unique'
-                  example: halvorson.emilia@example.net
+                  example: janet07@example.net
                 phone:
                   type: string
                   description: ''
-                  example: animi
+                  example: ipsum
                 age:
                   type: integer
                   description: 'min:16'
-                  example: 6
+                  example: 18
                 degree:
                   type: string
                   description: ''
-                  example: error
+                  example: aut
                 'job_title ':
                   type: string
                   description: ''
-                  example: molestias
+                  example: consequatur
                 device_name:
                   type: string
                   description: ''
-                  example: libero
+                  example: quod
                 bio:
                   type: string
                   description: ''
-                  example: ea
+                  example: consequatur
                 password:
                   type: string
                   description: 'min:8|confirmed'
-                  example: 'n>r~J2+ZJI)*bvQLtwsN'
+                  example: '*~0//f;B2@d-0C8'
                 password_confirmation:
                   type: required
                   description: min8
-                  example: quo
+                  example: ducimus
                 job_title:
                   type: string
                   description: ''
-                  example: et
+                  example: id
               required:
                 - name
                 - email
@@ -133,7 +186,14 @@ paths:
       summary: 'Topic listing'
       operationId: topicListing
       description: ''
-      parameters: []
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
       responses:
         401:
           description: ''
@@ -149,7 +209,6 @@ paths:
                     example: Unauthenticated.
       tags:
         - Topics
-      security: []
 tags:
   -
     name: Auth
@@ -157,3 +216,12 @@ tags:
   -
     name: Topics
     description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

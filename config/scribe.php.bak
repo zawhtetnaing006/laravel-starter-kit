@@ -209,15 +209,11 @@ return [
      */
     'auth' => [
         'enabled' => true,
-        'default' => true,
+        'default' => false,
         'in' => 'bearer',
         'use_value' => env('SCRIBE_AUTH_KEY'),
         'placeholder' => '{ACCESS_TOKEN}',
         'extra_info' => 'You can retrieve your token by logging in.',
-        /*
-         * The name of the auth parameter (eg token, key, apiKey) or header (eg Authorization, Api-Key).
-         */
-        'name' => 'key',
     ],
 
     /*

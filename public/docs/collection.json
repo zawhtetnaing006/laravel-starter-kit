@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f22a9c5b-fef2-430a-a995-868a87915373",
+        "_postman_id": "c64c1cc9-96d9-4816-81fb-c763dd1e7e00",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"yrohan@example.org\",\"password\":\"Ws^Kah&,g\\\"h&{pwR_3?\",\"device_name\":\"doloremque\"}"
+                            "raw": "{\"email\":\"bauch.tyree@example.net\",\"password\":\"C<J6+d\\\":yx@W[Kcr\",\"device_name\":\"dolorem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -82,73 +82,73 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "ex",
+                                    "value": "odit",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "profile_photo",
-                                    "value": "doloremque",
+                                    "value": "ut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "email",
-                                    "value": "halvorson.emilia@example.net",
+                                    "value": "janet07@example.net",
                                     "type": "text",
                                     "description": "Must Be Unique"
                                 },
                                 {
                                     "key": "phone",
-                                    "value": "animi",
+                                    "value": "ipsum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "age",
-                                    "value": 6,
+                                    "value": 18,
                                     "type": "text",
                                     "description": "min:16"
                                 },
                                 {
                                     "key": "degree",
-                                    "value": "error",
+                                    "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "job_title ",
-                                    "value": "molestias",
+                                    "value": "consequatur",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "device_name",
-                                    "value": "libero",
+                                    "value": "quod",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "bio",
-                                    "value": "ea",
+                                    "value": "consequatur",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "password",
-                                    "value": "n>r~J2+ZJI)*bvQLtwsN",
+                                    "value": "*~0\/\/f;B2@d-0C8",
                                     "type": "text",
                                     "description": "min:8|confirmed"
                                 },
                                 {
                                     "key": "password_confirmation",
-                                    "value": "quo",
+                                    "value": "ducimus",
                                     "type": "text",
                                     "description": "min8"
                                 },
                                 {
                                     "key": "job_title",
-                                    "value": "et",
+                                    "value": "id",
                                     "type": "text",
                                     "description": ""
                                 }
@@ -163,7 +163,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n\n\"id\": 1,\n\"name\": \"ab\",\n\"email\": \"admin@gmail.com\",\n\"phone\": \"temporibus\",\n\"age\": 18,\n\"device_name\": \"Iphone\",\n\"degree\": \"commodi\",\n\"job_title\": \"Team Lead at google\",\n\"bio\": \"Awesome developer\",\n\"updated_at\": \"2023-05-29:16:06:33\",\n\"created_at\": \"2023-05-29:16:06:33\",\n\"token\": \"1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m\",\n\"profile_photo_path\": \"path\/to\/profile_image\"\n}\n\nwill always retrun response in this format. If there's no value, there'll be null",
+                            "body": "{\n\n\"id\": 1,\n\"name\": \"ab\",\n\"email\": \"admin@gmail.com\",\n\"phone\": \"temporibus\",\n\"age\": 18,\n\"device_name\": \"Iphone\",\n\"degree\": \"commodi\",\n\"job_title\": \"Team Lead at google\",\n\"bio\": \"Awesome developer\",\n\"updated_at\": \"2023-05-29:16:06:33\",\n\"created_at\": \"2023-05-29:16:06:33\",\n\"token\": \"1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m\",\n\"profile_photo_path\": \"path\/to\/profile_image\"\n}",
                             "name": ""
                         }
                     ]
@@ -195,10 +195,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -226,6 +223,13 @@
         }
     ],
     "auth": {
-        "type": "noauth"
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "value": null,
+                "type": "string"
+            }
+        ]
     }
 }

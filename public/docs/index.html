@@ -114,7 +114,9 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by logging in.</p>
 
         <h1 id="auth">Auth</h1>
 
@@ -137,9 +139,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"yrohan@example.org\",
-    \"password\": \"Ws^Kah&amp;,g\\\"h&amp;{pwR_3?\",
-    \"device_name\": \"doloremque\"
+    \"email\": \"bauch.tyree@example.net\",
+    \"password\": \"C&lt;J6+d\\\":yx@W[Kcr\",
+    \"device_name\": \"dolorem\"
 }"
 </code></pre></div>
 
@@ -155,9 +157,9 @@ const headers = {
 };
 
 let body = {
-    "email": "yrohan@example.org",
-    "password": "Ws^Kah&amp;,g\"h&amp;{pwR_3?",
-    "device_name": "doloremque"
+    "email": "bauch.tyree@example.net",
+    "password": "C&lt;J6+d\":yx@W[Kcr",
+    "device_name": "dolorem"
 };
 
 fetch(url, {
@@ -255,10 +257,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-user-login"
-               value="yrohan@example.org"
+               value="bauch.tyree@example.net"
                data-component="body">
     <br>
-<p>Example: <code>yrohan@example.org</code></p>
+<p>Example: <code>bauch.tyree@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -266,10 +268,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-user-login"
-               value="Ws^Kah&,g"h&{pwR_3?"
+               value="C<J6+d":yx@W[Kcr"
                data-component="body">
     <br>
-<p>Example: <code>Ws^Kah&amp;,g"h&amp;{pwR_3?</code></p>
+<p>Example: <code>C&lt;J6+d":yx@W[Kcr</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>device_name</code></b>&nbsp;&nbsp;
@@ -277,10 +279,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="device_name"                data-endpoint="POSTapi-user-login"
-               value="doloremque"
+               value="dolorem"
                data-component="body">
     <br>
-<p>To identified user login devices. Won't be needed for web. Example: <code>doloremque</code></p>
+<p>To identified user login devices. Won't be needed for web. Example: <code>dolorem</code></p>
         </div>
         </form>
 
@@ -301,18 +303,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ex\",
-    \"profile_photo\": \"doloremque\",
-    \"email\": \"halvorson.emilia@example.net\",
-    \"phone\": \"animi\",
-    \"age\": 6,
-    \"degree\": \"error\",
-    \"job_title \": \"molestias\",
-    \"device_name\": \"libero\",
-    \"bio\": \"ea\",
-    \"password\": \"n&gt;r~J2+ZJI)*bvQLtwsN\",
-    \"password_confirmation\": \"quo\",
-    \"job_title\": \"et\"
+    \"name\": \"odit\",
+    \"profile_photo\": \"ut\",
+    \"email\": \"janet07@example.net\",
+    \"phone\": \"ipsum\",
+    \"age\": 18,
+    \"degree\": \"aut\",
+    \"job_title \": \"consequatur\",
+    \"device_name\": \"quod\",
+    \"bio\": \"consequatur\",
+    \"password\": \"*~0\\/\\/f;B2@d-0C8\",
+    \"password_confirmation\": \"ducimus\",
+    \"job_title\": \"id\"
 }"
 </code></pre></div>
 
@@ -328,18 +330,18 @@ const headers = {
 };
 
 let body = {
-    "name": "ex",
-    "profile_photo": "doloremque",
-    "email": "halvorson.emilia@example.net",
-    "phone": "animi",
-    "age": 6,
-    "degree": "error",
-    "job_title ": "molestias",
-    "device_name": "libero",
-    "bio": "ea",
-    "password": "n&gt;r~J2+ZJI)*bvQLtwsN",
-    "password_confirmation": "quo",
-    "job_title": "et"
+    "name": "odit",
+    "profile_photo": "ut",
+    "email": "janet07@example.net",
+    "phone": "ipsum",
+    "age": 18,
+    "degree": "aut",
+    "job_title ": "consequatur",
+    "device_name": "quod",
+    "bio": "consequatur",
+    "password": "*~0\/\/f;B2@d-0C8",
+    "password_confirmation": "ducimus",
+    "job_title": "id"
 };
 
 fetch(url, {
@@ -357,23 +359,20 @@ fetch(url, {
                 <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-
-&quot;id&quot;: 1,
-&quot;name&quot;: &quot;ab&quot;,
-&quot;email&quot;: &quot;admin@gmail.com&quot;,
-&quot;phone&quot;: &quot;temporibus&quot;,
-&quot;age&quot;: 18,
-&quot;device_name&quot;: &quot;Iphone&quot;,
-&quot;degree&quot;: &quot;commodi&quot;,
-&quot;job_title&quot;: &quot;Team Lead at google&quot;,
-&quot;bio&quot;: &quot;Awesome developer&quot;,
-&quot;updated_at&quot;: &quot;2023-05-29:16:06:33&quot;,
-&quot;created_at&quot;: &quot;2023-05-29:16:06:33&quot;,
-&quot;token&quot;: &quot;1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m&quot;,
-&quot;profile_photo_path&quot;: &quot;path/to/profile_image&quot;
-}
-
-will always retrun response in this format. If there&#039;s no value, there&#039;ll be null</code>
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;ab&quot;,
+    &quot;email&quot;: &quot;admin@gmail.com&quot;,
+    &quot;phone&quot;: &quot;temporibus&quot;,
+    &quot;age&quot;: 18,
+    &quot;device_name&quot;: &quot;Iphone&quot;,
+    &quot;degree&quot;: &quot;commodi&quot;,
+    &quot;job_title&quot;: &quot;Team Lead at google&quot;,
+    &quot;bio&quot;: &quot;Awesome developer&quot;,
+    &quot;updated_at&quot;: &quot;2023-05-29:16:06:33&quot;,
+    &quot;created_at&quot;: &quot;2023-05-29:16:06:33&quot;,
+    &quot;token&quot;: &quot;1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m&quot;,
+    &quot;profile_photo_path&quot;: &quot;path/to/profile_image&quot;
+}</code>
  </pre>
     </span>
 <span id="execution-results-POSTapi-user-register" hidden>
@@ -452,10 +451,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-user-register"
-               value="ex"
+               value="odit"
                data-component="body">
     <br>
-<p>Example: <code>ex</code></p>
+<p>Example: <code>odit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>profile_photo</code></b>&nbsp;&nbsp;
@@ -463,10 +462,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="profile_photo"                data-endpoint="POSTapi-user-register"
-               value="doloremque"
+               value="ut"
                data-component="body">
     <br>
-<p>Example: <code>doloremque</code></p>
+<p>Example: <code>ut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -474,10 +473,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-user-register"
-               value="halvorson.emilia@example.net"
+               value="janet07@example.net"
                data-component="body">
     <br>
-<p>Must Be Unique Example: <code>halvorson.emilia@example.net</code></p>
+<p>Must Be Unique Example: <code>janet07@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -485,10 +484,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-user-register"
-               value="animi"
+               value="ipsum"
                data-component="body">
     <br>
-<p>Example: <code>animi</code></p>
+<p>Example: <code>ipsum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
@@ -496,10 +495,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="age"                data-endpoint="POSTapi-user-register"
-               value="6"
+               value="18"
                data-component="body">
     <br>
-<p>min:16 Example: <code>6</code></p>
+<p>min:16 Example: <code>18</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>degree</code></b>&nbsp;&nbsp;
@@ -507,10 +506,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="degree"                data-endpoint="POSTapi-user-register"
-               value="error"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>aut</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_title </code></b>&nbsp;&nbsp;
@@ -518,10 +517,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="job_title "                data-endpoint="POSTapi-user-register"
-               value="molestias"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>molestias</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>device_name</code></b>&nbsp;&nbsp;
@@ -529,10 +528,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="device_name"                data-endpoint="POSTapi-user-register"
-               value="libero"
+               value="quod"
                data-component="body">
     <br>
-<p>Example: <code>libero</code></p>
+<p>Example: <code>quod</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -540,10 +539,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="bio"                data-endpoint="POSTapi-user-register"
-               value="ea"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>ea</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -551,10 +550,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-user-register"
-               value="n>r~J2+ZJI)*bvQLtwsN"
+               value="*~0//f;B2@d-0C8"
                data-component="body">
     <br>
-<p>min:8|confirmed Example: <code>n&gt;r~J2+ZJI)*bvQLtwsN</code></p>
+<p>min:8|confirmed Example: <code>*~0//f;B2@d-0C8</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -562,10 +561,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="password_confirmation"                data-endpoint="POSTapi-user-register"
-               value="quo"
+               value="ducimus"
                data-component="body">
     <br>
-<p>min8 Example: <code>quo</code></p>
+<p>min8 Example: <code>ducimus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_title</code></b>&nbsp;&nbsp;
@@ -573,10 +572,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="job_title"                data-endpoint="POSTapi-user-register"
-               value="et"
+               value="id"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>id</code></p>
         </div>
         </form>
 
@@ -587,6 +586,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h2 id="topics-GETapi-topic">Topic listing</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -598,6 +598,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost/api/topic" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -608,6 +609,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -654,7 +656,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-topic" data-method="GET"
       data-path="api/topic"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -684,6 +686,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/topic</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization" class="auth-value"               data-endpoint="GETapi-topic"
+               value="Bearer {ACCESS_TOKEN}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {ACCESS_TOKEN}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
