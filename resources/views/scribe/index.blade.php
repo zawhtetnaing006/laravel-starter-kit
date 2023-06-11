@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Laravel Documentation</title>
+    <title>Mentors Mentee Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
-    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <link rel="stylesheet" href="{{ asset("/vendor/scribe/css/theme-default.style.css") }}" media="screen">
+    <link rel="stylesheet" href="{{ asset("/vendor/scribe/css/theme-default.print.css") }}" media="print">
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 
@@ -27,12 +27,12 @@
 
     <script>
         var tryItOutBaseUrl = "http://localhost";
-        var useCsrf = Boolean();
+        var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="../docs/js/tryitout-4.21.2.js"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-4.20.0.js") }}"></script>
 
-    <script src="../docs/js/theme-default-4.21.2.js"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-4.20.0.js") }}"></script>
 
 </head>
 
@@ -41,7 +41,7 @@
 <a href="#" id="nav-button">
     <span>
         MENU
-        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+        <img src="{{ asset("/vendor/scribe/images/navbar.png") }}" alt="navbar-image"/>
     </span>
 </a>
 <div class="tocify-wrapper">
@@ -79,6 +79,16 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETsanctum-csrf-cookie">
+                                <a href="#endpoints-GETsanctum-csrf-cookie">Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-topics" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="topics">
                     <a href="#topics">Topics</a>
@@ -92,13 +102,13 @@
             </div>
 
     <ul class="toc-footer" id="toc-footer">
-                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                    <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
                 <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 11, 2023</li>
+        <li>Last updated: May 30, 2023</li>
     </ul>
 </div>
 
@@ -137,9 +147,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"yrohan@example.org\",
-    \"password\": \"Ws^Kah&amp;,g\\\"h&amp;{pwR_3?\",
-    \"device_name\": \"doloremque\"
+    \"email\": \"brekke.garfield@example.com\",
+    \"password\": \"g(p2\\\"H|s[jmPAJIi7b\",
+    \"device_name\": \"iure\"
 }"
 </code></pre></div>
 
@@ -155,9 +165,9 @@ const headers = {
 };
 
 let body = {
-    "email": "yrohan@example.org",
-    "password": "Ws^Kah&amp;,g\"h&amp;{pwR_3?",
-    "device_name": "doloremque"
+    "email": "brekke.garfield@example.com",
+    "password": "g(p2\"H|s[jmPAJIi7b",
+    "device_name": "iure"
 };
 
 fetch(url, {
@@ -255,10 +265,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-user-login"
-               value="yrohan@example.org"
+               value="brekke.garfield@example.com"
                data-component="body">
     <br>
-<p>Example: <code>yrohan@example.org</code></p>
+<p>Example: <code>brekke.garfield@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -266,10 +276,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-user-login"
-               value="Ws^Kah&,g"h&{pwR_3?"
+               value="g(p2"H|s[jmPAJIi7b"
                data-component="body">
     <br>
-<p>Example: <code>Ws^Kah&amp;,g"h&amp;{pwR_3?</code></p>
+<p>Example: <code>g(p2"H|s[jmPAJIi7b</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>device_name</code></b>&nbsp;&nbsp;
@@ -277,10 +287,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="device_name"                data-endpoint="POSTapi-user-login"
-               value="doloremque"
+               value="iure"
                data-component="body">
     <br>
-<p>To identified user login devices. Won't be needed for web. Example: <code>doloremque</code></p>
+<p>To identified user login devices. Won't be needed for web. Example: <code>iure</code></p>
         </div>
         </form>
 
@@ -301,18 +311,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ex\",
-    \"profile_photo\": \"doloremque\",
-    \"email\": \"halvorson.emilia@example.net\",
-    \"phone\": \"animi\",
-    \"age\": 6,
-    \"degree\": \"error\",
-    \"job_title \": \"molestias\",
-    \"device_name\": \"libero\",
-    \"bio\": \"ea\",
-    \"password\": \"n&gt;r~J2+ZJI)*bvQLtwsN\",
-    \"password_confirmation\": \"quo\",
-    \"job_title\": \"et\"
+    \"name\": \"incidunt\",
+    \"profile_photo\": \"placeat\",
+    \"email\": \"ole.hagenes@example.com\",
+    \"phone\": \"perspiciatis\",
+    \"age\": 4,
+    \"degree\": \"accusamus\",
+    \"job_title \": \"vel\",
+    \"device_name\": \"rerum\",
+    \"bio\": \"omnis\",
+    \"password\": \"lWk.y^pZ,\",
+    \"password_confirmation\": \"officia\",
+    \"job_title\": \"tempora\"
 }"
 </code></pre></div>
 
@@ -328,18 +338,18 @@ const headers = {
 };
 
 let body = {
-    "name": "ex",
-    "profile_photo": "doloremque",
-    "email": "halvorson.emilia@example.net",
-    "phone": "animi",
-    "age": 6,
-    "degree": "error",
-    "job_title ": "molestias",
-    "device_name": "libero",
-    "bio": "ea",
-    "password": "n&gt;r~J2+ZJI)*bvQLtwsN",
-    "password_confirmation": "quo",
-    "job_title": "et"
+    "name": "incidunt",
+    "profile_photo": "placeat",
+    "email": "ole.hagenes@example.com",
+    "phone": "perspiciatis",
+    "age": 4,
+    "degree": "accusamus",
+    "job_title ": "vel",
+    "device_name": "rerum",
+    "bio": "omnis",
+    "password": "lWk.y^pZ,",
+    "password_confirmation": "officia",
+    "job_title": "tempora"
 };
 
 fetch(url, {
@@ -452,10 +462,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-user-register"
-               value="ex"
+               value="incidunt"
                data-component="body">
     <br>
-<p>Example: <code>ex</code></p>
+<p>Example: <code>incidunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>profile_photo</code></b>&nbsp;&nbsp;
@@ -463,10 +473,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="profile_photo"                data-endpoint="POSTapi-user-register"
-               value="doloremque"
+               value="placeat"
                data-component="body">
     <br>
-<p>Example: <code>doloremque</code></p>
+<p>Example: <code>placeat</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -474,10 +484,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="email"                data-endpoint="POSTapi-user-register"
-               value="halvorson.emilia@example.net"
+               value="ole.hagenes@example.com"
                data-component="body">
     <br>
-<p>Must Be Unique Example: <code>halvorson.emilia@example.net</code></p>
+<p>Must Be Unique Example: <code>ole.hagenes@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
@@ -485,10 +495,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="phone"                data-endpoint="POSTapi-user-register"
-               value="animi"
+               value="perspiciatis"
                data-component="body">
     <br>
-<p>Example: <code>animi</code></p>
+<p>Example: <code>perspiciatis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>age</code></b>&nbsp;&nbsp;
@@ -496,10 +506,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="age"                data-endpoint="POSTapi-user-register"
-               value="6"
+               value="4"
                data-component="body">
     <br>
-<p>min:16 Example: <code>6</code></p>
+<p>min:16 Example: <code>4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>degree</code></b>&nbsp;&nbsp;
@@ -507,10 +517,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="degree"                data-endpoint="POSTapi-user-register"
-               value="error"
+               value="accusamus"
                data-component="body">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>accusamus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_title </code></b>&nbsp;&nbsp;
@@ -518,10 +528,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="job_title "                data-endpoint="POSTapi-user-register"
-               value="molestias"
+               value="vel"
                data-component="body">
     <br>
-<p>Example: <code>molestias</code></p>
+<p>Example: <code>vel</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>device_name</code></b>&nbsp;&nbsp;
@@ -529,10 +539,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="device_name"                data-endpoint="POSTapi-user-register"
-               value="libero"
+               value="rerum"
                data-component="body">
     <br>
-<p>Example: <code>libero</code></p>
+<p>Example: <code>rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bio</code></b>&nbsp;&nbsp;
@@ -540,10 +550,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="bio"                data-endpoint="POSTapi-user-register"
-               value="ea"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>ea</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -551,10 +561,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                name="password"                data-endpoint="POSTapi-user-register"
-               value="n>r~J2+ZJI)*bvQLtwsN"
+               value="lWk.y^pZ,"
                data-component="body">
     <br>
-<p>min:8|confirmed Example: <code>n&gt;r~J2+ZJI)*bvQLtwsN</code></p>
+<p>min:8|confirmed Example: <code>lWk.y^pZ,</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
@@ -562,10 +572,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="password_confirmation"                data-endpoint="POSTapi-user-register"
-               value="quo"
+               value="officia"
                data-component="body">
     <br>
-<p>min8 Example: <code>quo</code></p>
+<p>min8 Example: <code>officia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>job_title</code></b>&nbsp;&nbsp;
@@ -573,12 +583,137 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="job_title"                data-endpoint="POSTapi-user-register"
-               value="et"
+               value="tempora"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>tempora</code></p>
         </div>
         </form>
+
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETsanctum-csrf-cookie">Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETsanctum-csrf-cookie">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/sanctum/csrf-cookie" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/sanctum/csrf-cookie"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETsanctum-csrf-cookie">
+            <blockquote>
+            <p>Example response (204):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+vary: Origin
+set-cookie: XSRF-TOKEN=eyJpdiI6Ikw3b2NQYVZVQXc4aDR1UFBnRWtEYWc9PSIsInZhbHVlIjoiQlZoelAwSjVEQUhUNC9KTDd2Nnh3VlF0R3dNNUxHNEJwa3hXRzFMakVHOWV1N05QaWNMQUxuQ0tkemY4N2dvdXRveGpxZXppMThFUHIyOFQxTzlmUFdheHp5TzlhcDNzbHgwd1ROZURYRURzdmhKSC9CZlN4QjY2eTIwRDRYazAiLCJtYWMiOiI0ZWQ5MDFkMDJkODVlYmQwMjk4MTZkYzRkZTk0ZWUxZGZkMzUyYzZhMWQ0ZTljNDBlNjVkOGFlOWI4OGQ0NjM5IiwidGFnIjoiIn0%3D; expires=Tue, 30 May 2023 17:49:49 GMT; Max-Age=7200; path=/; samesite=lax; mentors_mentee_session=eyJpdiI6ImxOQjlNUTd6SCt5b1pWZHQ5UCszZmc9PSIsInZhbHVlIjoiVjRDVDN4V2hzK2p3NW9VdmJGazF5Um5JYnVoN3llUE9nOE84UTlqTTdUTU8zNWhqWDNFQkpNV1MvcWJQQzFNMkFxdUpkYnlHWmtPWXN4SXFuam12YndSanF6RnlqcXVhdWpXY3lTK3RlL1d3ZDJwWk1rL1VPZnByUzFQdktCTlciLCJtYWMiOiI0NjFlYzMwZjBlNzA1NzgzNzUwZTUyYTQ3YmZjMDZjNGFjNWJkNzJmMzFlNGU5Njk1OWMzMzZkNDE4MDFhOTE2IiwidGFnIjoiIn0%3D; expires=Tue, 30 May 2023 17:49:49 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+ </code></pre></details>         <pre>
+<code>Empty response</code>
+ </pre>
+    </span>
+<span id="execution-results-GETsanctum-csrf-cookie" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETsanctum-csrf-cookie"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETsanctum-csrf-cookie"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETsanctum-csrf-cookie" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETsanctum-csrf-cookie">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETsanctum-csrf-cookie" data-method="GET"
+      data-path="sanctum/csrf-cookie"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETsanctum-csrf-cookie', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETsanctum-csrf-cookie"
+                    onclick="tryItOut('GETsanctum-csrf-cookie');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETsanctum-csrf-cookie"
+                    onclick="cancelTryOut('GETsanctum-csrf-cookie');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETsanctum-csrf-cookie"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>sanctum/csrf-cookie</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETsanctum-csrf-cookie"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETsanctum-csrf-cookie"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                 <h1 id="topics">Topics</h1>
 
@@ -629,7 +764,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-access-control-allow-origin: *
+vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{

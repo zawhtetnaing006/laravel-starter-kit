@@ -1,16 +1,16 @@
-name: Endpoints
+name: Topics
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/user
+    uri: api/topic
     metadata:
-      groupName: Endpoints
+      groupName: Topics
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Topic listing'
       description: ''
       authenticated: false
       custom: []

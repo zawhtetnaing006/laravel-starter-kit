@@ -26,7 +26,13 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'phone',
+        'age',
+        'degree',
+        'job_title',
+        'profile_photo_path',
+        'device_name',
+        'bio'
     ];
 
     /**
@@ -47,15 +53,42 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'id' => 'integer',
+        'name' => 'string',
+        'email' => 'string',
+        'phone' => 'string',
+        'age' => 'integer',
+        'device_name' => 'string',
+        'degree'    => 'string',
+        'job_title' => 'string',
+        'bio'   => 'string',
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+        'profile_photo_path' => 'string'
     ];
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array<int, string>
-     */
-    protected $appends = [
-        'profile_photo_url',
-    ];
+
+    public function toArray()
+    {
+        $attributes = parent::toArray();
+
+        $fillableAttributes = $this->getFillable();
+        $missingAttributes = array_diff($fillableAttributes, array_keys($attributes));
+
+        foreach ($missingAttributes as $attribute) {
+            $attributes[$attribute] = null;
+        }
+
+        return $attributes;
+    }
+
+    protected function formatDateTime($dateTime)
+    {
+        return \Carbon\Carbon::parse($dateTime)->format('Y-m-d H:i:s');
+    }
+
+    public function Topics()
+    {
+        return $this->hasMany(Topic::class,'created_by','id');
+    }
 }

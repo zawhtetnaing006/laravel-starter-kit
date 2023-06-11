@@ -10,23 +10,178 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "c1aa94dc-7423-41c3-9be2-86cd393f7a1a",
+        "_postman_id": "f22a9c5b-fef2-430a-a995-868a87915373",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
+            "name": "Auth",
             "description": "",
             "item": [
                 {
-                    "name": "GET api\/user",
+                    "name": "User LogIn",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/user",
+                            "path": "api\/user\/login",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
+                            "raw": "{{baseUrl}}\/api\/user\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"yrohan@example.org\",\"password\":\"Ws^Kah&,g\\\"h&{pwR_3?\",\"device_name\":\"doloremque\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\t\"token\": \"generate token\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "User Register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "ex",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "profile_photo",
+                                    "value": "doloremque",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "halvorson.emilia@example.net",
+                                    "type": "text",
+                                    "description": "Must Be Unique"
+                                },
+                                {
+                                    "key": "phone",
+                                    "value": "animi",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "age",
+                                    "value": 6,
+                                    "type": "text",
+                                    "description": "min:16"
+                                },
+                                {
+                                    "key": "degree",
+                                    "value": "error",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "job_title ",
+                                    "value": "molestias",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "device_name",
+                                    "value": "libero",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "bio",
+                                    "value": "ea",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "n>r~J2+ZJI)*bvQLtwsN",
+                                    "type": "text",
+                                    "description": "min:8|confirmed"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "quo",
+                                    "type": "text",
+                                    "description": "min8"
+                                },
+                                {
+                                    "key": "job_title",
+                                    "value": "et",
+                                    "type": "text",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\n\"id\": 1,\n\"name\": \"ab\",\n\"email\": \"admin@gmail.com\",\n\"phone\": \"temporibus\",\n\"age\": 18,\n\"device_name\": \"Iphone\",\n\"degree\": \"commodi\",\n\"job_title\": \"Team Lead at google\",\n\"bio\": \"Awesome developer\",\n\"updated_at\": \"2023-05-29:16:06:33\",\n\"created_at\": \"2023-05-29:16:06:33\",\n\"token\": \"1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m\",\n\"profile_photo_path\": \"path\/to\/profile_image\"\n}\n\nwill always retrun response in this format. If there's no value, there'll be null",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Topics",
+            "description": "",
+            "item": [
+                {
+                    "name": "Topic listing",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/topic",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/topic"
                         },
                         "method": "GET",
                         "header": [

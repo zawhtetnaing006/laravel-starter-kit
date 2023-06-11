@@ -7,10 +7,131 @@ servers:
   -
     url: 'http://localhost'
 paths:
-  /api/user:
+  /api/user/login:
+    post:
+      summary: 'User LogIn'
+      operationId: userLogIn
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  token: 'generate token'
+                properties:
+                  token:
+                    type: string
+                    example: 'generate token'
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: yrohan@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: 'Ws^Kah&,g"h&{pwR_3?'
+                device_name:
+                  type: string
+                  description: "To identified user login devices. Won't be needed for web."
+                  example: doloremque
+              required:
+                - email
+                - password
+      security: []
+  /api/user/register:
+    post:
+      summary: 'User Register'
+      operationId: userRegister
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\n\"id\": 1,\n\"name\": \"ab\",\n\"email\": \"admin@gmail.com\",\n\"phone\": \"temporibus\",\n\"age\": 18,\n\"device_name\": \"Iphone\",\n\"degree\": \"commodi\",\n\"job_title\": \"Team Lead at google\",\n\"bio\": \"Awesome developer\",\n\"updated_at\": \"2023-05-29:16:06:33\",\n\"created_at\": \"2023-05-29:16:06:33\",\n\"token\": \"1|qo6eJceg77saTfqEl6bJ5SJ8J38uUEgIwgxHYX7m\",\n\"profile_photo_path\": \"path/to/profile_image\"\n}\n\nwill always retrun response in this format. If there's no value, there'll be null"
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: ex
+                profile_photo:
+                  type: 'max:2048kb'
+                  description: ''
+                  example: doloremque
+                email:
+                  type: string
+                  description: 'Must Be Unique'
+                  example: halvorson.emilia@example.net
+                phone:
+                  type: string
+                  description: ''
+                  example: animi
+                age:
+                  type: integer
+                  description: 'min:16'
+                  example: 6
+                degree:
+                  type: string
+                  description: ''
+                  example: error
+                'job_title ':
+                  type: string
+                  description: ''
+                  example: molestias
+                device_name:
+                  type: string
+                  description: ''
+                  example: libero
+                bio:
+                  type: string
+                  description: ''
+                  example: ea
+                password:
+                  type: string
+                  description: 'min:8|confirmed'
+                  example: 'n>r~J2+ZJI)*bvQLtwsN'
+                password_confirmation:
+                  type: required
+                  description: min8
+                  example: quo
+                job_title:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - name
+                - email
+                - phone
+                - password
+      security: []
+  /api/topic:
     get:
-      summary: ''
-      operationId: getApiUser
+      summary: 'Topic listing'
+      operationId: topicListing
       description: ''
       parameters: []
       responses:
@@ -27,9 +148,12 @@ paths:
                     type: string
                     example: Unauthenticated.
       tags:
-        - Endpoints
+        - Topics
       security: []
 tags:
   -
-    name: Endpoints
+    name: Auth
+    description: ''
+  -
+    name: Topics
     description: ''
