@@ -71,4 +71,46 @@ abstract class BaseRepo
         }
         return $model->save();
     }
+
+    public function getDataWithPigination($perPage = 10, $page = 0, $orderBy = null, $searches = null)
+    {
+        $query = $this->model->query();
+        
+        $offset = $perPage * $page;
+
+        // Apply offset and limit
+        if ($offset > 0) {
+            $query->offset($offset);
+        }
+
+        if ($orderBy) {
+            $query->orderBy($orderBy);
+        }
+
+        $query->limit($perPage);
+
+        if($searches) {
+            $query->where(function ($q) use ($searches) {
+                foreach ($searches as $key => $value) {
+                    $q->orWhere($key, 'LIKE', "%$value%");
+                }
+            });
+        }
+
+        // Get total count
+        $totalCount = $query->count();
+
+        // Calculate total pages
+        $totalPages = ceil($totalCount / $perPage);
+
+        $results = $query->get();
+
+        return [
+            'data' => $results,
+            'total' => $totalCount,
+            'per_page' => $perPage,
+            'current_page' => $page,
+            'total_pages' => $totalPages,
+        ];
+    }
 }
